@@ -1,5 +1,53 @@
-Legolando_CollapseConfigMixin_AngleurNicheOptions = {}
+Legolando_PortedTabSystemMixin_AngleurNicheOptions = {};
+function Legolando_PortedTabSystemMixin_AngleurNicheOptions:OnLoad()
+	self.tabs = {};
+	self.tabPool = CreateFramePool("BUTTON", self, self.tabTemplate);
+end
+function Legolando_PortedTabSystemMixin_AngleurNicheOptions:AddTab(tabText)
+	local tabID = #self.tabs + 1;
+	local newTab = self.tabPool:Acquire();
+	table.insert(self.tabs, newTab);
+	newTab.layoutIndex = tabID;
+	newTab:Init(tabID, tabText);
+	newTab:Show();
+	self:MarkDirty();
+	return tabID;
+end
+function Legolando_PortedTabSystemMixin_AngleurNicheOptions:SetTabSelectedCallback(tabSelectedCallback)
+	self.tabSelectedCallback = tabSelectedCallback;
+end
+function Legolando_PortedTabSystemMixin_AngleurNicheOptions:SetTab(tabID)
+	if not self.tabSelectedCallback(tabID) then
+		self:SetTabVisuallySelected(tabID);
+	end
+end
+function Legolando_PortedTabSystemMixin_AngleurNicheOptions:SetTabVisuallySelected(tabID)
+	self.selectedTabID = tabID;
+	for i, tab in ipairs(self.tabs) do
+		tab:SetTabSelected(tab:GetTabID() == tabID);
+	end
+end
+function Legolando_PortedTabSystemMixin_AngleurNicheOptions:SetTabShown(tabID, isShown)
+	self.tabs[tabID]:SetShown(isShown);
+	self:MarkDirty();
+end
+function Legolando_PortedTabSystemMixin_AngleurNicheOptions:SetTabEnabled(tabID, enabled, errorReason)
+	self.tabs[tabID]:SetTabEnabled(enabled, errorReason);
+	self:MarkDirty();
+end
+function Legolando_PortedTabSystemMixin_AngleurNicheOptions:GetTabWidthConstraints()
+	return self.minTabWidth, self.maxTabWidth;
+end
+function Legolando_PortedTabSystemMixin_AngleurNicheOptions:GetTabButton(tabID)
+	return self.tabs[tabID];
+end
+function Legolando_PortedTabSystemMixin_AngleurNicheOptions:PlayTabSelectSound()
+	if self.tabSelectSound then
+		PlaySound(self.tabSelectSound);
+	end
+end
 
+Legolando_CollapseConfigMixin_AngleurNicheOptions = {}
 
 function Legolando_CollapseConfigMixin_AngleurNicheOptions:Init(tabNames)
     if tabNames and next(tabNames) ~= nil then
