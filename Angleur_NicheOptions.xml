@@ -1,0 +1,57 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+    <Button parent="Angleur_ConfigPanel" name="Angleur_NicheOptions" inherits="Legolando_CollapseConfigTemplate_AngleurNicheOptions">
+        <Size x="52" y="52"/>
+        <Anchors>
+            <Anchor point="TOPRIGHT" relativeTo="$parent" relativePoint="TOPLEFT" x="3" y="-25"/>
+        </Anchors>
+        <Scripts>
+            <OnLoad function="AngleurNicheOptions_OnLoad"/>
+        </Scripts>
+        <Frames>
+            <Frame parent="Angleur_NicheOptions_Popup" name="$parent_Checkboxes1" parentKey="checkboxes1" id="1" inherits="Legolando_CheckboxesTemplate_AngleurNicheOptions">
+                <Size x="1" y="1"/>
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT" x="17" y="-24"/>
+                </Anchors>
+                <Frames>
+                    <CheckButton parentKey="disableClickMove" inherits="Legolando_CheckboxTemplate_AngleurNicheOptions">
+                        <Size x="26" y="26"/>
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="14" y="-10"/>
+                        </Anchors>
+                    </CheckButton>
+                    <!-- <CheckButton parentKey="blep" inherits="Legolando_CheckboxTemplate_AngleurNicheOptions">
+                        <Size x="26" y="26"/>
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="10" y="-30"/>
+                        </Anchors>
+                    </CheckButton> -->
+                </Frames>
+            </Frame>
+            <Frame parent="Angleur_NicheOptions_Popup" name="$parent_Checkboxes2" parentKey="checkboxes2" id="2" inherits="Legolando_CheckboxesTemplate_AngleurNicheOptions">
+                <Size x="1" y="1"/>
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT" x="17" y="-24"/>
+                </Anchors>
+                <Frames>
+                    <CheckButton parentKey="sitWhileFishing" inherits="Legolando_CheckboxTemplate_AngleurNicheOptions">
+                        <Size x="26" y="26"/>
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="12" y="-10"/>
+                        </Anchors>
+                    </CheckButton>
+                    <!-- <CheckButton parentKey="glep" inherits="Legolando_CheckboxTemplate_AngleurNicheOptions">
+                        <Size x="26" y="26"/>
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="10" y="-30"/>
+                        </Anchors>
+                    </CheckButton> -->
+                </Frames>
+            </Frame>
+
+        </Frames>
+    </Button>
+
+</Ui>

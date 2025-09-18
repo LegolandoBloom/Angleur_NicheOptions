@@ -1,0 +1,72 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+    <!-- REQUIRES Legolando_SimpleSquareButtonTemplate TO WORK -->
+
+    <Script file="Legolando_CollapseConfigTemplate.lua"/>
+
+    <!-- 
+     GUIDE: After creating the frame inheriting the template, call myFrame:Init(tabNames)
+     tabNames - indexed table of names for tabs. Pass nil if you don't want tabs.
+      example: 
+         local tabNames = {
+             [1] = "yo",
+             [2] = "ho",
+             [3] = "bo"
+         }
+    -->
+
+    <!-- 
+     GUIDE: When adding UI elements, set 'popup' as their parent. To bind UI elements to the tab system, simply set their ID to 
+     the tab you want them to be in. 
+    -->
+
+    <Button name="Legolando_CollapseConfigTemplate_AngleurNicheOptions" mixin="Legolando_CollapseConfigMixin_AngleurNicheOptions" inherits="Legolando_SimpleSquareButtonTemplate_AngleurNicheOptions" virtual="true">
+        <KeyValues>
+            <KeyValue key="savedVarTable" value="" type="table"/>
+        </KeyValues>
+        <Scripts>
+            <OnClick>
+                if self.popup:IsShown() then
+                    self.popup:Hide()
+                else
+                    self.popup:Show()
+                end
+            </OnClick>
+        </Scripts>
+        <Frames>
+            <Frame name="$parent_Popup" parentKey="popup" toplevel="true" hidden="true" enableMouse="true">
+                <Size x="300" y="150"/>
+                <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent" relativePoint="TOPLEFT" x="0" y="0"/>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <FontString parentKey="title" inherits="GameFontNormal" text="Template Title">
+                            <Anchors>
+                                <Anchor point="TOPLEFT" x="18" y="-19"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Frame name="$parent_Tabs" parentKey="tabs" inherits="TabSystemTemplate">    
+                        <Size x="1" y="1"/>
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="8" y="6"/>
+                        </Anchors>
+                        <KeyValues>
+                            <KeyValue key="spacing" value="0.1" type="number"/>
+                        </KeyValues>
+                    </Frame>
+                    <Frame parentKey="Border" inherits="SecureDialogBorderTemplate"/>                   
+                    <Button parentKey="$parent.CloseButton" inherits="UIPanelCloseButton">
+                        <Anchors>
+                            <Anchor point="TOPRIGHT" x="-2" y="-2"/>
+                        </Anchors>
+                    </Button>
+                </Frames>
+            </Frame>
+        </Frames>
+    </Button>
+</Ui>
