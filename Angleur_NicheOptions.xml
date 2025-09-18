@@ -4,7 +4,7 @@
     <Button parent="Angleur_ConfigPanel" name="Angleur_NicheOptions" inherits="Legolando_CollapseConfigTemplate_AngleurNicheOptions">
         <Size x="52" y="52"/>
         <Anchors>
-            <Anchor point="TOPRIGHT" relativeTo="$parent" relativePoint="TOPLEFT" x="3" y="-25"/>
+            <Anchor point="TOPRIGHT" relativeTo="$parent" relativePoint="TOPLEFT" x="2" y="-24"/>
         </Anchors>
         <Scripts>
             <OnLoad function="AngleurNicheOptions_OnLoad"/>

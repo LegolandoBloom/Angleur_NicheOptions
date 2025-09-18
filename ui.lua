@@ -7,6 +7,10 @@ local tabNames = {
 local completed = false
 function AngleurNicheOptions_SetupUI(self)
     if completed then return end
+
+    self.icon:SetTexture("Interface/Addons/Angleur_NicheOptions/images/buttonart.png")
+    self.icon:SetSize(30, 30)
+    self.popup:AdjustPointsOffset(5, 0)
     self:Init(tabNames)
 
     self.popup.title:SetText(T["Angleur_NicheOptions Config"])
