@@ -67,7 +67,6 @@ end
 function AngleurNicheOptions_EventLoader(self, event, unit, ...)
     local arg4, arg5 = ...
     if event == "ADDON_LOADED" and unit == "Angleur_NicheOptions" then
-        print("what")
         AngleurNicheOptions_SavedVariables()
         AngleurNicheOptions_SetupUI(self)
     elseif event == "PLAYER_ENTERING_WORLD" then
