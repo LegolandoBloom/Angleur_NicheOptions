@@ -1,4 +1,4 @@
-## Interface: 110205
+## Interface: 110207
 ## Title: Angleur_NicheOptions
 ## Notes: Niche functionality plugin for Angleur. 
 ## Version: 1.0
