@@ -22,6 +22,12 @@
                             <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="14" y="-10"/>
                         </Anchors>
                     </CheckButton>
+                    <CheckButton parentKey="moreItems" inherits="Legolando_CheckboxTemplate_AngleurNicheOptions">
+                        <Size x="26" y="26"/>
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="12" y="-33"/>
+                        </Anchors>
+                    </CheckButton>
                     <!-- <CheckButton parentKey="blep" inherits="Legolando_CheckboxTemplate_AngleurNicheOptions">
                         <Size x="26" y="26"/>
                         <Anchors>
@@ -53,5 +59,11 @@
 
         </Frames>
     </Button>
+
+    <Frame name="AngleurNicheOptions_ReloadWarning" scale="1" inherits="Legolando_ReloadWarningTemplate_AngleurNicheOptions">
+        <Anchors>
+            <Anchor point="CENTER" x="0" y="100"/>
+        </Anchors>
+    </Frame>
 
 </Ui>

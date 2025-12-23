@@ -1,0 +1,37 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+    <!-- <Script file="Legolando_ReloadWarningTemplate.lua"/> -->
+
+    <Frame name="Legolando_ReloadWarningTemplate_AngleurNicheOptions" toplevel="true" frameStrata="DIALOG" inherits="BasicFrameTemplateWithInset" hidden="true" virtual="true">
+        <Size x="270" y="96"/>
+        <Layers>
+            <Layer level="ARTWORK">
+                <FontString name="$parent_MainText" parentKey="mainText" inherits="GameFontHighlight">
+                    <Anchors>
+                        <Anchor point="TOP" x="0" y="-35"/>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parent_OtherText" parentKey="otherText" inherits="SpellFont_Small">
+                    <Color r="0.8" g="0.8" b="0.8"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM" x="0" y="22"/>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button parentKey="reloadButton" inherits="GameMenuButtonTemplate">
+                <Size x="96" y="20"/>
+                <Anchors>
+                    <Anchor point="TOP" relativeTo="$parent_MainText" relativePoint="BOTTOM" x="0" y="-5"/>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        C_UI.Reload()
+                    </OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+</Ui>

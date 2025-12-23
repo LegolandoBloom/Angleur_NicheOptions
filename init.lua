@@ -39,6 +39,9 @@ function AngleurNicheOptions_SavedVariables()
     if not AngleurNicheOptions_UI.checkboxes[1].disableClickMove then
         AngleurNicheOptions_UI.checkboxes[1].disableClickMove = false
     end
+    if not AngleurNicheOptions_UI.checkboxes[1].moreItems then
+        AngleurNicheOptions_UI.checkboxes[1].moreItems = false
+    end
     -- if not AngleurNicheOptions_UI.checkboxes[1].blep then
     --     AngleurNicheOptions_UI.checkboxes[1].blep = falseg
     -- end

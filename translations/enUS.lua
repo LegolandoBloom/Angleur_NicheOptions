@@ -22,5 +22,16 @@ T["When enabled, Angleur will temporarily turn off the \'Click-to-Move\' feature
 .. colorBlu:WrapTextInColorCode("Double-Click ") .. "fishing,\n\nso you don't accidentaly move when you try to fish.\n\nIf you are " 
 .. "using " .. colorBlu:WrapTextInColorCode("OneKey ") .. "fishing, " .. colorYello:WrapTextInColorCode("\'Click-to-Move\' ") .. "won't be changed."
 
-T["Cast the /sit emote when cast your fishing rod. Fish in comfort!"] = "Cast the " .. colorYello:WrapTextInColorCode("/sit ") 
-.. "emote when cast your fishing rod. Fish in comfort!"
+T["Cast the /sit emote after your first cast. Fish in comfort!"] = "Cast the " .. colorYello:WrapTextInColorCode("/sit ") 
+.. "emote after your first cast. Fish in comfort!"
+
+
+-- moreItems
+T["More \'Extra Items\'"] = "More \'Extra Items\'"
+T["When enabled, will increase Angleur's \'Extra Items\' slots from 3 to 6"] = "When " .. colorGreen:WrapTextInColorCode("enabled, ") .. "will increase " 
+.. colorBlu:WrapTextInColorCode("Angleur's ") .. "\'Extra Items\' slots from 3 to 6"
+
+T["Angleur_NicheOptions Warning"] = "Angleur_NicheOptions Warning"
+T["You need to reload the UI for the changes to take effect."] = "You need to " .. colorYello:WrapTextInColorCode("reload the UI ") .. "for the changes\nto take effect."
+T["Reload now?"] = "Reload now?"
+T["Reload"] = "Reload"

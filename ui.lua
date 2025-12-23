@@ -32,6 +32,18 @@ function AngleurNicheOptions_SetupUI(self)
         end
     end)
 
+    self.popup.checkboxes1.moreItems.text:SetText(T["More \'Extra Items\'"])
+    self.popup.checkboxes1.moreItems.text.tooltip = T["When enabled, will increase Angleur's \'Extra Items\' slots from 3 to 6"]
+    self.popup.checkboxes1.moreItems:reposition()
+    self.popup.checkboxes1.moreItems.reference = "moreItems"
+    self.popup.checkboxes1.moreItems:HookScript("OnClick", function(self)
+        if self:GetChecked() then
+            AngleurNicheOptions_ReloadWarning:Show()
+        elseif self:GetChecked() == false then
+            AngleurNicheOptions_ReloadWarning:Show()
+        end
+    end)
+
     -- self.popup.checkboxes1.blep.text:SetText("Blep")
     -- self.popup.checkboxes1.blep:reposition()
     -- self.popup.checkboxes1.blep.reference = "blep"
@@ -48,5 +60,11 @@ function AngleurNicheOptions_SetupUI(self)
 
     self.popup.checkboxes2.savedVarTable = AngleurNicheOptions_UI.checkboxes[2]
     self.popup.checkboxes2:Update()
+
+    
+    AngleurNicheOptions_ReloadWarning.TitleText:SetText(T["Angleur_NicheOptions Warning"])
+    AngleurNicheOptions_ReloadWarning.mainText:SetText(T["You need to reload the UI for the changes to take effect."])
+    AngleurNicheOptions_ReloadWarning.reloadButton:SetText(T["Reload"])
+    
     completed = true
 end
