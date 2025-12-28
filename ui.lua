@@ -1,5 +1,8 @@
 local T = AngleurNicheOptions_Translate
 
+-- 'angNiche' is the NicheOptions namespace
+local addonName, angNiche = ...
+
 local tabNames = {
     [1] = "Accessibility",
     [2] = "Fun",
@@ -7,6 +10,8 @@ local tabNames = {
 local completed = false
 function AngleurNicheOptions_SetupUI(self)
     if completed then return end
+    
+    local gameVersion = angNiche.gameVersion
 
     self.icon:SetTexture("Interface/Addons/Angleur_NicheOptions/images/buttonart.png")
     self.icon:SetSize(30, 30)
@@ -43,6 +48,26 @@ function AngleurNicheOptions_SetupUI(self)
             AngleurNicheOptions_ReloadWarning:Show()
         end
     end)
+
+
+    if gameVersion == 2 then
+        self.popup.checkboxes1.tuskarrSpear.text:SetText(T["Use The Tuskarr Spear"])
+        self.popup.checkboxes1.tuskarrSpear.text.tooltip = T["When enabled, Angleur will have you equip -> use -> unequip the Tuskarr Spear whenever it's off cooldown."]
+        self.popup.checkboxes1.tuskarrSpear:reposition()
+        self.popup.checkboxes1.tuskarrSpear.reference = "tuskarrSpear"
+        self.popup.checkboxes1.tuskarrSpear:HookScript("OnClick", function(self)
+            if self:GetChecked() then
+
+            elseif self:GetChecked() == false then
+                local equipped = C_Item.IsEquippedItem(88535)
+                if equipped and not InCombatLockdown() then 
+                    AngleurNicheOptions_UnequipSpear_SetDelayer()
+                end
+            end
+        end)
+    else
+        self.popup.checkboxes1.tuskarrSpear:Hide()
+    end
 
     -- self.popup.checkboxes1.blep.text:SetText("Blep")
     -- self.popup.checkboxes1.blep:reposition()

@@ -1,7 +1,7 @@
 ## Interface: 110207
 ## Title: Angleur_NicheOptions
 ## Notes: Niche functionality plugin for Angleur. 
-## Version: 1.0
+## Version: Angleur_NicheOptions @project-version@
 ## Author: LegolandoBloom
 ## SavedVariables: AngleurNicheOptions_Config, AngleurNicheOptions_UI, AngleurNicheOptions_SavedCVars
 ## SavedVariablesPerCharacter: AngleurNicheOptions_Character
@@ -13,5 +13,6 @@ translations\translations.xml
 angTemplates\embeds.xml
 init.lua
 ui.lua
+tuskarrSpear.lua
 Angleur_NicheOptions.lua
 Angleur_NicheOptions.xml

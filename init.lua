@@ -1,5 +1,8 @@
 local T = AngleurNicheOptions_Translate
 
+-- 'angNiche' is the NicheOptions namespace
+local addonName, angNiche = ...
+
 AngleurNicheOptions_Config = {
 
 }
@@ -15,7 +18,7 @@ AngleurNicheOptions_UI = {
 }
 
 AngleurNicheOptions_SavedCVars = {
-    clickToMove,
+    -- clickToMove,
 }
 
 function AngleurNicheOptions_SavedVariables()
@@ -25,6 +28,9 @@ function AngleurNicheOptions_SavedVariables()
 
     if not AngleurNicheOptions_Character then
         AngleurNicheOptions_Character = {}
+    end
+    if not AngleurNicheOptions_Character.unequippedItems then
+        AngleurNicheOptions_Character.unequippedItems = {}
     end
     
     if not AngleurNicheOptions_UI then
@@ -41,6 +47,9 @@ function AngleurNicheOptions_SavedVariables()
     end
     if not AngleurNicheOptions_UI.checkboxes[1].moreItems then
         AngleurNicheOptions_UI.checkboxes[1].moreItems = false
+    end
+    if not AngleurNicheOptions_UI.checkboxes[1].tuskarrSpear then
+        AngleurNicheOptions_UI.checkboxes[1].tuskarrSpear = false
     end
     -- if not AngleurNicheOptions_UI.checkboxes[1].blep then
     --     AngleurNicheOptions_UI.checkboxes[1].blep = falseg
@@ -61,6 +70,8 @@ function AngleurNicheOptions_OnLoad(self)
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("ADDON_LOADED")
     self:SetScript("OnEvent", AngleurNicheOptions_EventLoader)
+    -- 1 : Retail | 2 : MoP(Or Cata) | 3 : Vanilla | (0: None, fail)
+    angNiche.gameVersion = Angleur_CheckVersion()
     -- Thievery_SetupConfigPanel(self)
     -- self.pickpocketButton:RegisterForClicks("AnyUp", "AnyDown")
     -- self.pickpocketButton:RegisterEvent("PLAYER_SOFT_INTERACT_CHANGED")

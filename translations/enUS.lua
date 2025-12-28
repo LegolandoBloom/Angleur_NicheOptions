@@ -35,3 +35,8 @@ T["Angleur_NicheOptions Warning"] = "Angleur_NicheOptions Warning"
 T["You need to reload the UI for the changes to take effect."] = "You need to " .. colorYello:WrapTextInColorCode("reload the UI ") .. "for the changes\nto take effect."
 T["Reload now?"] = "Reload now?"
 T["Reload"] = "Reload"
+
+
+-- tuskarrSpear(for MoP)
+T["Use The Tuskarr Spear"] = "Use The Tuskarr Spear"
+T["When enabled, Angleur will have you equip -> use -> unequip the Tuskarr Spear whenever it's off cooldown."] = "When enabled, Angleur will have you equip -> use -> unequip the Tuskarr Spear whenever it's off cooldown."

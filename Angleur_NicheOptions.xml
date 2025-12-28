@@ -28,6 +28,12 @@
                             <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="12" y="-33"/>
                         </Anchors>
                     </CheckButton>
+                    <CheckButton parentKey="tuskarrSpear" inherits="Legolando_CheckboxTemplate_AngleurNicheOptions">
+                        <Size x="26" y="26"/>
+                        <Anchors>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="12" y="-56"/>
+                        </Anchors>
+                    </CheckButton>
                     <!-- <CheckButton parentKey="blep" inherits="Legolando_CheckboxTemplate_AngleurNicheOptions">
                         <Size x="26" y="26"/>
                         <Anchors>
