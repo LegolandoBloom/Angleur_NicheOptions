@@ -20,8 +20,8 @@ end
 
 
 local function isValid(itemID, slot)
-    if not C_Item.IsEquippableItem(43656) then return false end
-    if C_Item.GetItemCount(43656) < 1 then return false end
+    if not C_Item.IsEquippableItem(88535) then return false end
+    if C_Item.GetItemCount(88535) < 1 then return false end
     if IsInventoryItemLocked(slot) then return false end
     return true
 end
@@ -86,12 +86,12 @@ end
 
 function AngleurNicheOptions_JuggleSpear(forceUnequip)
     if InCombatLockdown() then return end
-    if not C_Item.IsEquippableItem(43656) then return end
-    if C_Item.GetItemCount(43656) < 1 then return end
+    if not C_Item.IsEquippableItem(88535) then return end
+    if C_Item.GetItemCount(88535) < 1 then return end
     if IsInventoryItemLocked(INVSLOT_MAINHAND) then return end
 
-    local equipped = C_Item.IsEquippedItem(43656)
-    local startTime, duration = C_Container.GetItemCooldown(43656)
+    local equipped = C_Item.IsEquippedItem(88535)
+    local startTime, duration = C_Container.GetItemCooldown(88535)
     local onCooldown = false
     if startTime == 0 then
         -- stay false
@@ -129,7 +129,7 @@ function AngleurNicheOptions_JuggleSpear(forceUnequip)
         Angleur_BetaPrint(0, "Spear off cooldown, equipping")
         Angleur_BetaPrint(0, "UNEQUIPS:")
         Angleur_BetaDump(0, AngleurNicheOptions_Character.unequippedItems)
-        C_Item.EquipItemByName(43656)
+        C_Item.EquipItemByName(88535)
         return false
     end
 
