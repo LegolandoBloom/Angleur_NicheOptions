@@ -59,7 +59,7 @@ function AngleurNicheOptions_SetupUI(self)
             if self:GetChecked() then
 
             elseif self:GetChecked() == false then
-                local equipped = C_Item.IsEquippedItem(88535)
+                local equipped = C_Item.IsEquippedItem(43656)
                 if equipped and not InCombatLockdown() then 
                     AngleurNicheOptions_UnequipSpear_SetDelayer()
                 end

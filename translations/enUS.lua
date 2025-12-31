@@ -38,5 +38,6 @@ T["Reload"] = "Reload"
 
 
 -- tuskarrSpear(for MoP)
-T["Use The Tuskarr Spear"] = "Use The Tuskarr Spear"
-T["When enabled, Angleur will have you equip -> use -> unequip the Tuskarr Spear whenever it's off cooldown."] = "When enabled, Angleur will have you equip -> use -> unequip the Tuskarr Spear whenever it's off cooldown."
+T["Use The Tuskarr Spear"] = "Use The Tuskarr Spear (BETA)"
+T["When enabled, Angleur will have you equip -> use -> unequip the Tuskarr Spear whenever it's off cooldown."] = "When " .. colorGreen:WrapTextInColorCode("enabled, ") .. "Angleur will have you equip -> use -> unequip the Tuskarr Spear whenever it's off cooldown." 
+.. colorGrae:WrapTextInColorCode("\n\n(In BETA, please report any bugs/strange behaviour.)")
