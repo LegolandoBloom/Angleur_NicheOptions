@@ -1,5 +1,7 @@
 -- Only for Mists of Pandaria
 
+-- 'angNiche' is the NicheOptions namespace
+local addonName, angNiche = ...
 
 -- 88535 --> Sharpened Tuskarr Spear itemID
 
@@ -151,7 +153,7 @@ end
 
 -- If Angleur is put to sleep with the Tuskarr Spear NicheOption checked ON, forcibly UNEQUIP the Spear
 EventRegistry:RegisterCallback("Angleur_Sleep", function()
-    if AngleurNicheOptions_UI.checkboxes[1].tuskarrSpear then
+    if angNiche.gameVersion == 2 and AngleurNicheOptions_UI.checkboxes[1].tuskarrSpear then
         AngleurNicheOptions_JuggleSpear(true)
     end
 end)
