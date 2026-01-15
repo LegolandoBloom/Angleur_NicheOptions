@@ -1,0 +1,17 @@
+## Interface: 20505
+## Title: Angleur_NicheOptions
+## Notes: Niche functionality plugin for Angleur. 
+## Version: Angleur_NicheOptions @project-version@
+## Author: LegolandoBloom
+## SavedVariables: AngleurNicheOptions_Config, AngleurNicheOptions_UI, AngleurNicheOptions_SavedCVars
+## SavedVariablesPerCharacter: AngleurNicheOptions_Character
+## Dependencies: Angleur
+## IconTexture: Interface\AddOns\Angleur_NicheOptions\images\icon.png
+## X-Curse-Project-ID: 1349428
+
+translations\translations.xml
+angTemplates\embeds.xml
+init.lua
+ui.lua
+Angleur_NicheOptions.lua
+Angleur_NicheOptions.xml
