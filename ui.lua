@@ -24,47 +24,43 @@ function AngleurNicheOptions_SetupUI(self)
     self.popup.checkboxes1.disableClickMove.text.tooltip = T["When enabled, Angleur will temporarily turn off the \'Click-to-Move\' feature "
     .. "while it's in \'Awake\' mode if you are using Double-Click fishing, so you don't accidentaly move when you try to fish. If you are "
     .. "using OneKey fishing, \'Click-to-Move\' won't be changed."]
-    self.popup.checkboxes1.disableClickMove:reposition()
     self.popup.checkboxes1.disableClickMove.reference = "disableClickMove"
-    self.popup.checkboxes1.disableClickMove:HookScript("OnClick", function(self)
-        if self:GetChecked() then
+    self.popup.checkboxes1.disableClickMove.onClickCallback = function(checkbox, checked)
+        if checked then
             if AngleurConfig.chosenMethod == "oneKey" then return end
             if AngleurNicheOptions_Sleeping == false then
                 AngleurNicheOptions_HandleClickToMove(true)
             end
-        elseif self:GetChecked() == false then
+        else
             AngleurNicheOptions_HandleClickToMove(false)
         end
-    end)
+    end
 
     self.popup.checkboxes1.moreItems.text:SetText(T["More \'Extra Items\'"])
     self.popup.checkboxes1.moreItems.text.tooltip = T["When enabled, will increase Angleur's \'Extra Items\' slots from 3 to 6"]
-    self.popup.checkboxes1.moreItems:reposition()
     self.popup.checkboxes1.moreItems.reference = "moreItems"
-    self.popup.checkboxes1.moreItems:HookScript("OnClick", function(self)
-        if self:GetChecked() then
+    self.popup.checkboxes1.moreItems.onClickCallback = function(checkbox, checked)
+        if checked then
             AngleurNicheOptions_ReloadWarning:Show()
-        elseif self:GetChecked() == false then
+        else
             AngleurNicheOptions_ReloadWarning:Show()
         end
-    end)
-
+    end
 
     if gameVersion == 2 then
         self.popup.checkboxes1.tuskarrSpear.text:SetText(T["Use The Tuskarr Spear"])
         self.popup.checkboxes1.tuskarrSpear.text.tooltip = T["When enabled, Angleur will have you equip -> use -> unequip the Tuskarr Spear whenever it's off cooldown."]
-        self.popup.checkboxes1.tuskarrSpear:reposition()
         self.popup.checkboxes1.tuskarrSpear.reference = "tuskarrSpear"
-        self.popup.checkboxes1.tuskarrSpear:HookScript("OnClick", function(self)
-            if self:GetChecked() then
+        self.popup.checkboxes1.tuskarrSpear.onClickCallback = function(checkbox, checked)
+            if checked then
 
-            elseif self:GetChecked() == false then
+            else
                 local equipped = C_Item.IsEquippedItem(88535)
                 if equipped and not InCombatLockdown() then 
                     AngleurNicheOptions_UnequipSpear_SetDelayer()
                 end
             end
-        end)
+        end
     else
         self.popup.checkboxes1.tuskarrSpear:Hide()
     end
@@ -79,7 +75,6 @@ function AngleurNicheOptions_SetupUI(self)
     
     self.popup.checkboxes2.sitWhileFishing.text:SetText(T["Sit While Fishing"])
     self.popup.checkboxes2.sitWhileFishing.text.tooltip = T["Cast the /sit emote after your first cast. Fish in comfort!"]
-    self.popup.checkboxes2.sitWhileFishing:reposition()
     self.popup.checkboxes2.sitWhileFishing.reference = "sitWhileFishing"
 
 

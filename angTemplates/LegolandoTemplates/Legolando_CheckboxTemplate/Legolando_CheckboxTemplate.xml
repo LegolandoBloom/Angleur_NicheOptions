@@ -3,24 +3,19 @@
 
     <Script file="Legolando_CheckboxTemplate.lua"/>
 
-    <CheckButton name="Legolando_CheckboxTemplate_AngleurNicheOptions" mixin="Legolando_CheckboxMixin_AngleurNicheOptions" virtual="true">
-		<Size x="24" y="24"/>
-		<HitRectInsets>
-			<AbsInset left="0" right="0" top="0" bottom="8"/>
-		</HitRectInsets>
-        <Scripts>
-            <OnClick method="OnClick"/>
-        </Scripts>
-		<Layers>
+    <Frame name="Legolando_CheckboxFrameTemplate_AngleurNicheOptions" mixin="Legolando_CheckboxFrameMixin_AngleurNicheOptions" virtual="true">
+		<Size x="1" y="1"/>
+        <Layers>
             <Layer level="ARTWORK">
-                <FontString name="$parent_Text" parentKey="text" hidden="false" inherits="GameFontNormal">
+                <FontString name="$parent_Text" parentKey="text"  inherits="GameFontNormal" hidden="false">
                     <Anchors>
-                        <Anchor point="RIGHT" relativeTo="$parent" relativePoint="LEFT"/>
+                        <Anchor point="TOPLEFT" relativeKey="$parent" relativePoint="BOTTOMLEFT"/>
                     </Anchors>
                     <Scripts>
                         <OnEnter>
+                            print(self:GetParent():GetDebugName())
                             if not self.tooltip then return end
-                            if not self:GetParent():IsEnabled() then return end
+                            if not self:GetParent().checkbox:IsEnabled() then return end
                             GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT", 0)
                             local colorYello = CreateColor(1.0, 0.82, 0.0)
                             GameTooltip:AddLine(colorYello:WrapTextInColorCode(self:GetText()))
@@ -33,19 +28,52 @@
                         </OnLeave>
                     </Scripts>
                 </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <CheckButton name="$parent_Checkbox" mixin="Legolando_CheckboxMixin_AngleurNicheOptions" parentKey="checkbox" virtual="true">
+                <Size x="24" y="24"/>
+                <Anchors>
+                    <Anchor point="LEFT" relativeKey="$parent.text" relativePoint="RIGHT"/>
+                </Anchors>
+                <HitRectInsets>
+                    <AbsInset left="0" right="0" top="0" bottom="8"/>
+                </HitRectInsets>
+                <Scripts>
+                    <OnClick method="OnClick"/>
+                    <OnEnter>
+                        print("what")
+                        local text = self:GetParent().text
+                        if not text.tooltip then return end
+                        GameTooltip:SetOwner(text, "ANCHOR_BOTTOMRIGHT", 3, -3)
+                        local colorBlu = CreateColor(0.61, 0.85, 0.92)
+                        GameTooltip:AddLine(colorBlu:WrapTextInColorCode(text:GetText()))
+                        GameTooltip:AddLine(text.tooltip, 1, 1, 1, 0)
+                        GameTooltip:Show()
+                    </OnEnter>
+                    <OnLeave>
+                        local text = self:GetParent().text
+                        if not text.tooltip then return end
+                        GameTooltip:Hide()
+                    </OnLeave>
+                </Scripts>
+                <NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
+                <PushedTexture file="Interface\Buttons\UI-CheckBox-Down"/>
+                <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD"/>
+                <CheckedTexture name="$parentCheckedTexture" file="Interface\Buttons\UI-CheckBox-Check"/>
+                <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
+            </CheckButton>
+        </Frames>
+        <Layers>
+            <Layer level="ARTWORK">
                 <FontString name="$parent_DisabledText" parentKey="disabledText" justifyH="LEFT" hidden="true" inherits="SystemFont_Shadow_Small">
                     <Anchors>
-                        <Anchor point="LEFT" relativeTo="$parent" relativePoint="RIGHT"/>
+                        <Anchor point="LEFT" relativeKey="$parent.checkbox" relativePoint="RIGHT"/>
                     </Anchors>
                 </FontString>
             </Layer>
         </Layers>
-		<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
-		<PushedTexture file="Interface\Buttons\UI-CheckBox-Down"/>
-		<HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD"/>
-		<CheckedTexture name="$parentCheckedTexture" file="Interface\Buttons\UI-CheckBox-Check"/>
-		<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
-    </CheckButton>
+    </Frame>
 
     <Frame name="Legolando_CheckboxesTemplate_AngleurNicheOptions" mixin="Legolando_CheckboxesMixin_AngleurNicheOptions" virtual="true">
         <Size x="1" y="1"/>
