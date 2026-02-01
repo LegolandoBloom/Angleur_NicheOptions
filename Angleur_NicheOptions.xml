@@ -18,17 +18,17 @@
                 <Frames>
                     <Frame parentKey="disableClickMove" inherits="Legolando_CheckboxFrameTemplate_AngleurNicheOptions">
                         <Anchors>
-                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="12" y="-10"/>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT" x="12" y="-17"/>
                         </Anchors>
                     </Frame>
                     <Frame parentKey="moreItems" inherits="Legolando_CheckboxFrameTemplate_AngleurNicheOptions">
                         <Anchors>
-                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="12" y="-33"/>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT" x="12" y="-40"/>
                         </Anchors>
                     </Frame>
                     <Frame parentKey="tuskarrSpear" inherits="Legolando_CheckboxFrameTemplate_AngleurNicheOptions">
                         <Anchors>
-                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="12" y="-56"/>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT" x="12" y="-63"/>
                         </Anchors>
                     </Frame>
                     <!-- <Frame parentKey="blep" inherits="Legolando_CheckboxFrameTemplate_AngleurNicheOptions">
@@ -48,7 +48,7 @@
                     <Frame parentKey="sitWhileFishing" inherits="Legolando_CheckboxFrameTemplate_AngleurNicheOptions">
                         <Size x="26" y="26"/>
                         <Anchors>
-                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT" x="12" y="-10"/>
+                            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT" x="12" y="-17"/>
                         </Anchors>
                     </Frame>
                     <!-- <Frame parentKey="glep" inherits="Legolando_CheckboxFrameTemplate_AngleurNicheOptions">

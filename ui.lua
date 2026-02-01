@@ -21,7 +21,7 @@ function AngleurNicheOptions_SetupUI(self)
     self.popup.title:SetText(T["Angleur_NicheOptions Config"])
 
     self.popup.checkboxes1.disableClickMove.text:SetText(T["Disable Click-to-Move"])
-    self.popup.checkboxes1.disableClickMove.text.tooltip = T["When enabled, Angleur will temporarily turn off the \'Click-to-Move\' feature "
+    self.popup.checkboxes1.disableClickMove.tooltip = T["When enabled, Angleur will temporarily turn off the \'Click-to-Move\' feature "
     .. "while it's in \'Awake\' mode if you are using Double-Click fishing, so you don't accidentaly move when you try to fish. If you are "
     .. "using OneKey fishing, \'Click-to-Move\' won't be changed."]
     self.popup.checkboxes1.disableClickMove.reference = "disableClickMove"
@@ -37,7 +37,7 @@ function AngleurNicheOptions_SetupUI(self)
     end
 
     self.popup.checkboxes1.moreItems.text:SetText(T["More \'Extra Items\'"])
-    self.popup.checkboxes1.moreItems.text.tooltip = T["When enabled, will increase Angleur's \'Extra Items\' slots from 3 to 6"]
+    self.popup.checkboxes1.moreItems.tooltip = T["When enabled, will increase Angleur's \'Extra Items\' slots from 3 to 6"]
     self.popup.checkboxes1.moreItems.reference = "moreItems"
     self.popup.checkboxes1.moreItems.onClickCallback = function(checkbox, checked)
         if checked then
@@ -49,7 +49,7 @@ function AngleurNicheOptions_SetupUI(self)
 
     if gameVersion == 2 then
         self.popup.checkboxes1.tuskarrSpear.text:SetText(T["Use The Tuskarr Spear"])
-        self.popup.checkboxes1.tuskarrSpear.text.tooltip = T["When enabled, Angleur will have you equip -> use -> unequip the Tuskarr Spear whenever it's off cooldown."]
+        self.popup.checkboxes1.tuskarrSpear.tooltip = T["When enabled, Angleur will have you equip -> use -> unequip the Tuskarr Spear whenever it's off cooldown."]
         self.popup.checkboxes1.tuskarrSpear.reference = "tuskarrSpear"
         self.popup.checkboxes1.tuskarrSpear.onClickCallback = function(checkbox, checked)
             if checked then
@@ -74,7 +74,7 @@ function AngleurNicheOptions_SetupUI(self)
 
     
     self.popup.checkboxes2.sitWhileFishing.text:SetText(T["Sit While Fishing"])
-    self.popup.checkboxes2.sitWhileFishing.text.tooltip = T["Cast the /sit emote after your first cast. Fish in comfort!"]
+    self.popup.checkboxes2.sitWhileFishing.tooltip = T["Cast the /sit emote after your first cast. Fish in comfort!"]
     self.popup.checkboxes2.sitWhileFishing.reference = "sitWhileFishing"
 
 
