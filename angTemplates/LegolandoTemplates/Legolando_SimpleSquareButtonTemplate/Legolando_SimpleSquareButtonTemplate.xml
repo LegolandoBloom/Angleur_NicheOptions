@@ -18,7 +18,7 @@
         </KeyValues>
         <Scripts>
         <OnEnter>
-            GameTooltip:SetOwner(self, "ANCHOR_RIGHT", 0, -20)
+            GameTooltip:SetOwner(self, "ANCHOR_LEFT", 48, -3)
             GameTooltip:AddLine(self.tooltip)
             GameTooltip:Show()
         </OnEnter>

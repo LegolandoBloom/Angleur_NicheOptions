@@ -13,6 +13,8 @@ function AngleurNicheOptions_SetupUI(self)
     
     local gameVersion = angNiche.gameVersion
 
+    self.tooltip = T["Angleur_NicheOptions Config"]
+
     self.icon:SetTexture("Interface/Addons/Angleur_NicheOptions/images/buttonart.png")
     self.icon:SetSize(30, 30)
     self.popup:AdjustPointsOffset(5, 0)
