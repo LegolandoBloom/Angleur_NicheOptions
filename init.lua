@@ -69,14 +69,24 @@ end
 function AngleurNicheOptions_OnLoad(self)
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("ADDON_LOADED")
+    self:RegisterEvent("PLAYER_LOGOUT")
     self:SetScript("OnEvent", AngleurNicheOptions_EventLoader)
     -- 1 : Retail | 2 : MoP(Or Cata) | 3 : Vanilla | (0: None, fail)
     angNiche.gameVersion = Angleur_CheckVersion()
-    -- Thievery_SetupConfigPanel(self)
     -- self.pickpocketButton:RegisterForClicks("AnyUp", "AnyDown")
     -- self.pickpocketButton:RegisterEvent("PLAYER_SOFT_INTERACT_CHANGED")
     -- self.pickpocketButton:RegisterEvent("PLAYER_SOFT_ENEMY_CHANGED")
 end
+
+
+AngleurNicheOptions_TempCVars = {
+    autoInteract = {
+        active = false, cached = nil, setTo = "0", updating = false,
+    },
+}
+AngleurNicheOptions_TempCVarHandler = CreateFrame("Frame", "Example_CVarHandler", UIParent, "Legolando_TempCVarHandlerTemplate_AngleurNicheOptions")
+AngleurNicheOptions_TempCVarHandler.tempCVarsTable = AngleurNicheOptions_TempCVars
+AngleurNicheOptions_TempCVarHandler:Init()
 
 function AngleurNicheOptions_EventLoader(self, event, unit, ...)
     local arg4, arg5 = ...
@@ -85,6 +95,7 @@ function AngleurNicheOptions_EventLoader(self, event, unit, ...)
         AngleurNicheOptions_SetupUI(self)
     elseif event == "PLAYER_ENTERING_WORLD" then
         if unit == false and arg4 == false then return end
-
+    elseif event == "PLAYER_LOGOUT" then
+        AngleurNicheOptions_TempCVarHandler:ReleaseAll()
     end
 end

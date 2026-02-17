@@ -5,5 +5,6 @@
     <Include file="Legolando_CheckboxFrameTemplate\Legolando_CheckboxFrameTemplate.xml"/>
     <Include file="Legolando_CollapseConfigTemplate\Legolando_CollapseConfigTemplate.xml"/>
     <Include file="Legolando_ReloadWarningTemplate\Legolando_ReloadWarningTemplate.xml"/>
+    <Include file="Legolando_TempCVarHandlerTemplate\Legolando_TempCVarHandlerTemplate.xml"/>
     
 </Ui>
