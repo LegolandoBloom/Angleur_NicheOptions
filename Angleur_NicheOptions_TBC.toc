@@ -1,4 +1,4 @@
-## Interface: 20505
+## Interface: 20505, 20506
 ## Title: Angleur_NicheOptions
 ## Notes: Niche functionality plugin for Angleur. 
 ## Version: Angleur_NicheOptions @project-version@
