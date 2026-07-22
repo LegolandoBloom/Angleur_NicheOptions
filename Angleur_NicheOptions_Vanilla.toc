@@ -1,4 +1,4 @@
-## Interface: 11508
+## Interface: 11508, 11509
 ## Title: Angleur_NicheOptions
 ## Notes: Niche functionality plugin for Angleur. 
 ## Version: Angleur_NicheOptions @project-version@
