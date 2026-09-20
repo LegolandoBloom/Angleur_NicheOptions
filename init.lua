@@ -11,11 +11,11 @@ AngleurNicheOptions_Character ={
 
 }
 
-AngleurNicheOptions_UI = {
-    checkboxes = {
+-- AngleurNicheOptions_UI = {
+--     checkboxes = {
 
-    },
-}
+--     },
+-- }
 
 AngleurNicheOptions_SavedCVars = {
     -- clickToMove,

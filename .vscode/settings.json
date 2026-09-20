@@ -58,6 +58,7 @@
         "CONQUEST_BRACKET_NAME_BATTLEGROUND_BLITZ",
         "Angleur_PoolDelayer",
         "angleurDelayers",
-        "Angleur_BetaPrint"
+        "Angleur_BetaPrint",
+        "DISABLE"
     ]
 }
