@@ -105,9 +105,7 @@ local Sit_While_Fishing = DISABLED
 
 local colorYello = CreateColor(1.0, 0.82, 0.0)
 local colorBlu = CreateColor(0.61, 0.85, 0.92)
-print(colorBlu:WrapTextInColorCode("Angleur_NicheOptions Forever:") .. " Loaded.\nDue to a Blizzard Bug, saved variables for AddOns aren't working in the moment."
-.. "Please refer to the " .. colorYello:WrapTextInColorCode("FOREVER_README.txt ") .. "located in the addon's folder(Interface/AddOns/Angleur_NicheOptions) for instructions on"
-.. "how to change these settings.")
+print(colorBlu:WrapTextInColorCode("Angleur_NicheOptions Forever:") .. " Loaded.\n Please do the same thing for Angleur_NicheOptions.(locate and change forever_savedVariables.lua inside Angleur_NicheOptions' folder)")
 
 AngleurNicheOptions_UI = {
     checkboxes = {
