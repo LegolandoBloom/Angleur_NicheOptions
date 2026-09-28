@@ -12,8 +12,6 @@
 translations\translations.xml
 angTemplates\embeds.xml
 
-forever_savedVariables.lua
-
 init.lua
 ui.lua
 Angleur_NicheOptions.lua
